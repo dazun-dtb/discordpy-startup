@@ -6,6 +6,10 @@ bot = commands.Bot(command_prefix='!')
 token = os.environ['DISCORD_BOT_TOKEN']
 a=0
 
+@client.event
+async def on_ready():
+    await ctx.send('起動したよ')
+    
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)

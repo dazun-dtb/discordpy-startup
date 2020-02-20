@@ -18,6 +18,6 @@ async def win(ctx):
     await ctx.send('勝ち数が１増えたよ')
     global a
     a=a+1
-    print("あなたの勝ち数は"+str(a))
+    await ctx.send("あなたの勝ち数は"+str(a))
 
 bot.run(token)

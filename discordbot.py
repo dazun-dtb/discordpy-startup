@@ -3,7 +3,7 @@ import os
 import traceback
 
 bot = commands.Bot(command_prefix='!')
-token = 'Njc5OTkzNDEzMTUxNzUyMjQz.Xk52mw.8JLN1ySUDiPyS0c7ulaAvHETA6o'
+token = ''
 
 
 @bot.event

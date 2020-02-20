@@ -16,6 +16,7 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def win(ctx):
     await ctx.send('勝ち数が１増えたよ')
+    global a
     a=a+1
 
 bot.run(token)

@@ -7,7 +7,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 a=0
 
 @client.event
-async def on_ready(ctx):
+async def on_ready(self):
     await ctx.send('起動したよ')
     
 @bot.event

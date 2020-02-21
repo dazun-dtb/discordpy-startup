@@ -7,6 +7,10 @@ bot = commands.Bot(command_prefix='!')
 token = os.environ['DISCORD_BOT_TOKEN']
 a=0
 
+@client.event
+async def on_ready():
+    # 起動したらターミナルにログイン通知が表示される
+    print('ログインしました')
     
 @bot.event
 async def on_command_error(ctx, error):

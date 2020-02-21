@@ -7,10 +7,6 @@ bot = commands.Bot(command_prefix='!')
 token = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()
 a=0
-
-@client.event
-async def on_ready():
-    await ctx.send('起きたよー')
     
 @bot.event
 async def on_command_error(ctx, error):
@@ -26,3 +22,7 @@ async def win(ctx):
     await ctx.send("あなたの勝ち数は"+str(a))
 
 bot.run(token)
+
+@client.event
+async def on_ready():
+    await ctx.send('起きたよー')

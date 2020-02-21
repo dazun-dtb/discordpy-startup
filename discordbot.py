@@ -9,10 +9,7 @@ a=0
 
 @client.event
 async def on_ready():
-    ch_name = "全体報告部屋"
-    for channel in client.get_all_channels():
-        if channel.name == ch_name:
-            await channel.send("起動しました")
+    await ctx.send("起きたよー")
 
 @bot.event
 async def on_command_error(ctx, error):

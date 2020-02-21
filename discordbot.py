@@ -8,7 +8,7 @@ client = discord.Client()
 a=0
 
 @client.event
-async def on_ready():
+async def on_ready(ctx):
     await ctx.send("起きたよー")
 
 @bot.event

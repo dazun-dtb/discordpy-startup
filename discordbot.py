@@ -1,27 +1,24 @@
+from discord.ext import commands
 import discord
-import os
 import traceback
-
+token = "Njc5OTkzNDEzMTUxNzUyMjQz.Xk-o-Q.KnlWcuGagGzLYBziQsXqtdD6c8o"
 bot = commands.Bot(command_prefix='!')
-token = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()
-a=0
 
 @client.event
-async def on_ready(ctx):
-    await ctx.send("起きたよー")
+async def on_ready():
+    ch_name = "全体報告部屋"
+    for channel in client.get_all_channels():
+        if channel.name == ch_name:
+            await channel.send("起きたよー")
 
-@bot.event
-async def on_command_error(ctx, error):
-    orig_error = getattr(error, "original", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx.send(error_msg)
-
-@bot.command()
-async def win(ctx):
-    await ctx.send('勝ち数が１増えたよ')
-    global a
-    a=a+1
-    await ctx.send("あなたの勝ち数は"+str(a))
-
-bot.run(token)
+@client.event
+async def on_message(message):
+    # メッセージ送信者がBotだった場合は無視する
+    if message.author.bot:
+        return
+    # 「/neko」と発言したら「にゃーん」が返る処理
+    if message.content == 'neko':
+        await message.channel.send('みゃーん')
+        
+client.run(token)

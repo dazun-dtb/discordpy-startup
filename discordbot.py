@@ -1,7 +1,8 @@
 from discord.ext import commands
 import discord
 import traceback
-token = ""
+import os
+token = os.environ['DISCORD_BOT_TOKEN']
 bot = commands.Bot(command_prefix='!')
 client = discord.Client()
 

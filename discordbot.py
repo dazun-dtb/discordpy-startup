@@ -3,13 +3,13 @@ import traceback
 import os
 token = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()
+channel_debug=699470415969648671
 
 @client.event
 async def on_ready():
-    ch_name = "全体報告部屋"
-    for channel in client.get_all_channels():
-        if channel.name == ch_name:
-            await channel.send("起きたよー")
+    CHANNEL_ID = channel_debug
+    channel = client.get_channel(CHANNEL_ID)
+    await channel.send('起きたよー')
 
 @client.event
 async def on_message(message):
